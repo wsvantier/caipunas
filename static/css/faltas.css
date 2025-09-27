@@ -1,0 +1,116 @@
+table, td, th{
+  border: 1px solid gray;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+table{
+  margin-top: 15px;
+  }
+
+th{
+  background: #ddd;
+  
+}
+td
+{
+  width: 150px;
+  height: 120px;
+  text-align: end;
+  vertical-align: top;
+  color: blue;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.hoje{
+  background-color: #90EE90;
+}
+
+
+
+h1{
+  text-align: center;
+  background: #CCC;
+  display: block;
+  border-radius: 15px;
+  border: 1px black solid;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 10px;
+  max-width: 60%;
+  margin: auto;
+  background: #FFF;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px gray;
+}
+
+body{
+  background: #f4f6f8;
+  font-family: Arial;
+}
+
+input{
+  border: 1px solid #555;
+  padding: 7px;
+  border-radius: 7px;
+  margin: auto 7px;
+}
+
+#nomeForm{
+  width: 60%;
+}
+
+#diaForm{
+  width: 7%
+}
+
+#add{
+  background: blue;
+  border: none;
+  color: #FFF;
+  font-weight: bold;
+}
+
+#mesSelect{
+  color: #555;
+  font-weight: bold;
+  border: 1px solid #333;
+  padding: 7px;
+  border-radius: 7px;
+  margin: auto 7px;
+}
+
+
+.faltas{
+  background: #ddd;
+  font-size: 13pt;
+  color: #333;
+  text-align: start;
+  display: flex;
+  justify-content: space-between
+  
+}
+
+.excluir {
+  background-color: red;
+  height: 25px;
+  width: 25px;
+  border-radius: 7px;
+  border: none;
+}
+
+.excluir a:hover {
+  background: rgb(153, 0, 0);
+  border-radius: 7px;
+  height: 25px;
+  width: 25px;
+
+
+}

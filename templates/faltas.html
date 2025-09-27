@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Faltas Programadas {%endblock%}
+
+{% block conteudo %}
+
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/faltas.css')}}">
+<main>
+<h1> Faltas Programas: {{mes}} de {{ano}}</h1>
+<form action="/faltas/inserir" method="post">
+
+    <input type="text" name="nomeForm" id="nomeForm" placeholder="Nome do Funcionario" required>
+    <input type="number" name="diaForm" id="diaForm" placeholder="Dia" required>
+    <select name="mesSelect" id="mesSelect" required>
+        <option value="" selected disabled> Selecione um mês </option>
+        {% for m in meses %}
+
+            <option value="{{m}}">{{m}}</option>
+
+        {% endfor %}
+    </select>
+    <input type="submit" value="Adicionar" id="add">
+
+</form>
+<table>
+    <thead>
+        <th>Domingo</th>
+        <th>Segunda</th> 
+        <th>Terça</th>
+        <th>Quarta</th>
+        <th>Quinta</th>
+        <th>Sexta</th>
+        <th>Sabado</th>
+    </thead>
+    <tbody>
+        {% for x in semanas %}
+        <tr>
+            {%for y in x%}
+                {% if y == 0 %}
+                     <td> - </td>
+                {%else%}
+                    {% if y == dia %}
+                        <td class="hoje dias"> {{y}} <ul id="dia-{{y}}"></ul> </td>
+                        
+                    {%else%}
+                        <td class="dias"> {{y}} <ul id="dia-{{y}}"></ul></td>
+                  
+                    {%endif%}
+                {%endif%}
+            {% endfor %}
+        </tr>   
+        {%endfor%}
+    </tbody>
+
+</table>
+</main>
+
+<script src="{{url_for('static', filename = 'js/faltas.js')}}"></script>
+{%endblock%}
+

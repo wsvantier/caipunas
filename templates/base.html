@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %} {%endblock%}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/nav.css')}}">
+</head>
+<body>
+<nav>
+
+ <ul>
+	    <li><a href="#"> Resumo </a></li>
+            <li><a href="#"> Horario </a></li>
+	    <li><a href="{{url_for('faltas.home')}}"> Faltas Programadas </a></li>
+            <li><a> Lista Piloto </a>
+                <ul class="sub">
+                    <li><a href="#">Pré I e II</a></li>
+                    <li><a href="#">1º Ano </a></li>
+                    <li><a href="#">2º e 3º Ano </a></li>
+                    <li><a href="#">4º e 5º Ano </a></li>
+                </ul>
+            </li>
+            <li><a> Transporte </a>
+                <ul class="sub">
+                    <li><a href="#">Antônio</a></li>
+                    <li><a href="#">Leo</a></li>
+                    <li><a href="#">Noel</a></li>
+                    <li><a href="#">Micro</a></li>
+                    <li><a href="#">Não utilizam</a></li>
+                </ul>
+            </li>
+            <li><a href="#"> Quadro de Funcionários </a></li>
+	    <li><a href="#"> Patrimonio </a></li>
+        </ul>
+
+
+</nav>
+
+
+    {% block conteudo %} 
+    
+    {%endblock%}
+    
+</body>
+</html>

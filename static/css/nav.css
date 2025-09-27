@@ -1,0 +1,43 @@
+*{
+  margin:0;
+  padding: 0
+}
+
+nav > ul{
+  display: flex;
+  justify-content: space-around;
+  
+}
+
+li{
+  list-style: none;
+  background: #333;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  padding: 10px;
+  flex: 1 1 auto;
+}
+
+a{
+  color: #FFF;
+  text-decoration: none;
+  display: block;
+ 
+}
+a:hover{
+  background: #555
+}
+
+li:hover .sub{
+  display: block
+}
+
+.sub{
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+
+}
