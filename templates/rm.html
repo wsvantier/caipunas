@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+{% block titulo %}  Registro de Matriculas  {% endblock %}
+
+{% block conteudo %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/rm.css')}}">
+
+<main>
+    <h1> Registro de Matriculas (RM) </h1>
+    <form action="#" method="post">
+        <input type="text" name="nomeForm" id="nomeForm" placeholder="Nome do Aluno">
+        <input type="submit" value="Adicionar">
+    </form>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>RM</th>
+                    <th>NOME</th>
+                </tr>
+            </thead>
+            <tbody id="tabela_rm">
+                {% for x in range(500)%}
+                    <tr>
+                        <td>{{x}}</td>
+                        <td>FULANO DA SILVA SOARES PINTO GODINHO</td>
+                    </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+
+{% endblock %}

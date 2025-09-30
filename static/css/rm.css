@@ -1,0 +1,49 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 10px;
+  max-width: 60%;
+  margin: auto;
+  background: #FFF;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px gray;
+
+}
+
+table, td, th{
+  border: 1px solid gray;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+td{
+  text-align: center;
+  padding: 10px;
+  }
+h1{
+  text-align: center;
+}
+section{
+    height: 70vh;
+  overflow: scroll;
+}
+
+input{
+  border: 1px solid #555;
+  padding: 7px;
+  border-radius: 7px;
+  margin: auto 7px;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+ 
+}
+
+#nomeForm{
+  width: 50%;
+   }

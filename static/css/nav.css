@@ -3,6 +3,11 @@
   padding: 0
 }
 
+body{
+  background: #f4f6f8;
+  font-family: Arial;
+}
+
 nav > ul{
   display: flex;
   justify-content: space-around;
