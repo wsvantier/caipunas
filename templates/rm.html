@@ -8,7 +8,7 @@
 
 <main>
     <h1> Registro de Matriculas (RM) </h1>
-    <form action="#" method="post">
+    <form action="/rm/inserir" method="post">
         <input type="text" name="nomeForm" id="nomeForm" placeholder="Nome do Aluno">
         <input type="submit" value="Adicionar">
     </form>
@@ -18,20 +18,17 @@
                 <tr>
                     <th>RM</th>
                     <th>NOME</th>
+                    <th>Excluir</th>
                 </tr>
             </thead>
             <tbody id="tabela_rm">
-                {% for x in range(500)%}
-                    <tr>
-                        <td>{{x}}</td>
-                        <td>FULANO DA SILVA SOARES PINTO GODINHO</td>
-                    </tr>
-                {%endfor%}
+              <!-- Dados seram introduzidos via JS -->
             </tbody>
         </table>
     </section>
-
+<a href="/rm/excluir"></a>
 </main>
 
+<script src="{{url_for('static', filename='js/rm.js')}}"></script>
 
 {% endblock %}

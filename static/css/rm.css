@@ -47,3 +47,17 @@ form{
 #nomeForm{
   width: 50%;
    }
+
+td a {
+  padding: 5px;
+}
+
+.excluir{
+  color: red;
+  text-decoration: none;  
+}
+
+.excluir:hover{
+  color: #FFF;
+  background: darkred;
+}

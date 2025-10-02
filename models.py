@@ -11,3 +11,9 @@ class Falta(db.Model):
     ano = db.Column(db.Integer, nullable = False)
     
     __table_args__ = (UniqueConstraint('nome','dia','mes','ano', name='nome_dia_mes_ano'),)
+
+
+class Rm(db.Model):
+    rm =db.Column(db.Integer, primary_key = True, autoincrement=True)
+    nome = db.Column(db.String(), nullable = False)
+
