@@ -19,3 +19,21 @@ async function CarregarDados() {
 }
 
 addEventListener("DOMContentLoaded", CarregarDados())
+
+function Buscar(){
+
+    const busca = document.getElementById('busca')
+
+    const linhas = document.querySelectorAll('tbody tr')
+ 
+
+    linhas.forEach( e => {
+
+        if (e.textContent.includes(busca.value.toUpperCase())){
+            e.style.display = ''
+        } else {
+            e.style.display = 'none'
+        }
+
+    })
+}
