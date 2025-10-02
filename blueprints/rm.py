@@ -17,7 +17,7 @@ def dados():
 def add_rm():
     nome = request.form['nomeForm']
 
-    novo_registro = Rm(nome = nome)
+    novo_registro = Rm(nome = nome.upper())
     db.session.add(novo_registro)
     db.session.commit()
 
