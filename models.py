@@ -39,7 +39,7 @@ class Aluno(db.Model):
     turno = db.Column(db.Enum(['MANHA','TARDE']), nullable = False)
     transporte_id = db.Column(db.Integer, db.ForeignKey('Transporte.id'), nullable = True)
     
-    tranporte = db.relationship('Transporte', back_populates='aluno')
+    transporte = db.relationship('Transporte', back_populates='aluno')
     
 class Transporte(db.Model):
     id = db.Column(db.Integer, primary_key = True, autoincrement = True)
