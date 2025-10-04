@@ -18,31 +18,33 @@ class Rm(db.Model):
     nome = db.Column(db.String, nullable = False)
 
 class Sed(db.Model):
-    id = db.Column(db.Integer, primary_key = True, autoincrement = True)
+    id = db.Column(db.Integer, primary_key = True)
     tipo = db.Column(db.String, nullable = False)
     serie = db.Column(db.String, nullable = False)
     num_chamada = db.Column(db.Integer, nullable = False)
     nome = db.Column(db.String, nullable = False)
     ra = db.Column(db.Integer, nullable = False)
-    dig-ra = db.Column(db.Integer, nullable = False) 
-    dt-nasc = db.Column(db.Date, nullable = False)
+    dig_ra = db.Column(db.Integer, nullable = False) 
+    dt_nasc = db.Column(db.Date, nullable = False)
     inicio = db.Column(db.Date, nullable = False)
     fim = db.Column(db.Date, nullable = False)
     logradouro = db.Column(db.String, nullable = False)
     num_residencia = db.Column(db.String, nullable = False)
     bairro = db.Column(db.String, nullable = False)
     cidade = db.Column(db.String, nullable = False)
-    
+
 class Aluno(db.Model):
-    id = db.Column(db.Integer, primary_key = True, autoincrement = True)
+    id = db.Column(db.Integer, primary_key = True)
     nome = db.Column(db.String, nullable = False)
-    turno = db.Column(db.Enum(['MANHA','TARDE']), nullable = False)
-    transporte_id = db.Column(db.Integer, db.ForeignKey('Transporte.id'), nullable = True)
+    turno = db.Column(db.Enum('MANHA','TARDE'), nullable = False)
+    transporte_id = db.Column(db.Integer, db.ForeignKey('transporte.id'), nullable = True)
     
     transporte = db.relationship('Transporte', back_populates='aluno')
     
 class Transporte(db.Model):
-    id = db.Column(db.Integer, primary_key = True, autoincrement = True)
+    id = db.Column(db.Integer, primary_key = True)
     desc = db.Column(db.String, nullable = False)
     
-    alunos = db.relationship('Alunos', back_populates='transporte')
+    aluno = db.relationship('Aluno', back_populates='transporte')
+    
+        
