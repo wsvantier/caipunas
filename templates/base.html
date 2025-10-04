@@ -14,21 +14,18 @@
             <li><a href="#"> Horario </a></li>
             <li><a href="{{url_for('rm.home')}}"> RM </a></li>
 	    <li><a href="{{url_for('faltas.home')}}"> Faltas Programadas </a></li>
-            <li><a> Lista Piloto </a>
+            <li><a href="{{url_for('lp.home')}}"> Lista Piloto </a>
                 <ul class="sub">
-                    <li><a href="#">Pré I e II</a></li>
-                    <li><a href="#">1º Ano </a></li>
-                    <li><a href="#">2º e 3º Ano </a></li>
-                    <li><a href="#">4º e 5º Ano </a></li>
+                    {% for x in turmas %}
+                        <li><a href="#">{{ x }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
-            <li><a> Transporte </a>
+            <li><a href="#"> Transporte </a>
                 <ul class="sub">
-                    <li><a href="#">Antônio</a></li>
-                    <li><a href="#">Leo</a></li>
-                    <li><a href="#">Noel</a></li>
-                    <li><a href="#">Micro</a></li>
-                    <li><a href="#">Não utilizam</a></li>
+                    {% for x in transportes %}
+                        <li><a href="#">{{ x }}</a></li>
+                    {% endfor %}
                 </ul>
             </li>
             <li><a href="#"> Quadro de Funcionários </a></li>

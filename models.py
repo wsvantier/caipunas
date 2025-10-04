@@ -32,6 +32,9 @@ class Sed(db.Model):
     num_residencia = db.Column(db.String, nullable = False)
     bairro = db.Column(db.String, nullable = False)
     cidade = db.Column(db.String, nullable = False)
+    turma_id = db.Column(db.Integer, db.ForeignKey('turma.id'), nullable = False)
+    
+    turma = db.relationship('Turma', back_populates='sed')
 
 class Aluno(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -46,5 +49,9 @@ class Transporte(db.Model):
     desc = db.Column(db.String, nullable = False)
     
     aluno = db.relationship('Aluno', back_populates='transporte')
+            
+class Turma(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    desc = db.Column(db.String, nullable = False)
     
-        
+    sed = db.relationship('Sed', back_populates='turma')
