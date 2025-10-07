@@ -1,13 +1,13 @@
 from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 from models import db, Turma
-from dropmenu import turmas
+from dropmenu import turmas, rotas
 
 lp_bp = Blueprint('lp', __name__, url_prefix='/lp')
 
 @lp_bp.route('/')
 def home():
     dados = turmas()
-    return render_template('lp.html', turmas=dados)
+    return render_template('lp.html', turmas=dados, transportes=rotas())
 
 @lp_bp.route('/inserir', methods=['POST'])
 def add_turma():

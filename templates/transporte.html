@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+{% block titulo %} Gerenciamento de Turmas {% endblock %}
+
+{% block conteudo %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/transporte.css')}}">
+<main>
+
+    <div>
+        <h1> Adicionar Linha/Rotas </h1>
+        <form action="/transporte/inserir" method="post">
+            <input type="number" name="linhaForm" id="linhaForm" placeholder="Numero da linha" required><br>
+            <input type="text" name="descForm" id="descForm" placeholder="Descrição da linha" required><br>
+            <input type="submit" value="Adicionar" id="add">
+
+        </form>
+    </div>
+    <section>
+        <h1> Linha/Rotas Adicionadas </h1>
+        <table>
+            <thead>
+                <th> Numero da linha </th>
+                <th> Descrição da rota </th>
+                <th> Excluir </th>
+            </thead>
+            <tbody id="rotas">
+                <!-- Dados seram introduzidos via JS -->
+        </table>
+    </section>
+
+</main>
+<script>
+
+
+</script>
+<script src="{{url_for('static', filename='js/transporte.js')}}"></script>
+
+{% endblock %}

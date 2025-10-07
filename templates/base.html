@@ -21,7 +21,7 @@
                     {% endfor %}
                 </ul>
             </li>
-            <li><a href="#"> Transporte </a>
+            <li><a href="{{url_for('transporte.home')}}"> Transporte </a>
                 <ul class="sub">
                     {% for x in transportes %}
                         <li><a href="#">{{ x }}</a></li>

@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, jsonif
 import calendar
 from datetime import datetime
 from models import db,Falta
-from dropmenu import turmas
+from dropmenu import turmas, rotas
 
 faltas_bp = Blueprint('faltas', __name__, url_prefix='/faltas')
 
@@ -21,7 +21,7 @@ def home():
     meses_futuros= [x for x in meses if meses.index(x) >= mes-1]
    
     salas = turmas()
-    return render_template('faltas.html', semanas = semanas, mes = meses[datetime.now().month-1], ano = ano, meses = meses_futuros, dia = dia, turmas=salas)
+    return render_template('faltas.html', semanas = semanas, mes = meses[datetime.now().month-1], ano = ano, meses = meses_futuros, dia = dia, turmas=salas, transportes=rotas())
 
 
 @faltas_bp.route('/inserir', methods = ['POST'])

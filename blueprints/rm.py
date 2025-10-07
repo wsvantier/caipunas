@@ -1,13 +1,13 @@
 from flask import Blueprint, render_template, request, redirect, url_for, jsonify
 from models import db, Rm
-from dropmenu import turmas
+from dropmenu import turmas, rotas
 
 rm_bp = Blueprint('rm', __name__, url_prefix='/rm')
 
 @rm_bp.route('/')
 def home():
     turma = turmas()
-    return render_template('rm.html', turmas=turma)
+    return render_template('rm.html', turmas=turma, transportes=rotas())
 
 @rm_bp.route('/api/v1/dados')
 def dados():

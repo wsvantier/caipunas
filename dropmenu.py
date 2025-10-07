@@ -5,3 +5,9 @@ def turmas() -> list:
     dados = [x.desc for x in turmas]
     
     return dados
+
+def rotas() -> list:
+    rotas = Transporte.query.all()
+    dados = [x.desc for x in rotas]
+
+    return dados
