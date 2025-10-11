@@ -56,4 +56,4 @@ class Turma(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     desc = db.Column(db.String, nullable = False)
     
-    sed = db.relationship('Sed', back_populates='turma')
+    sed = db.relationship('Sed', back_populates='turma', cascade='all, delete')

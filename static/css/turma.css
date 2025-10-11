@@ -1,0 +1,48 @@
+main{
+  display: flex;
+  flex-direction: column;
+
+}
+
+section{
+  background: #fff;
+  width: 90%;
+  margin: auto;
+  border-radius: 30px;
+}
+
+form{
+  background: #fff;
+  border-radius: 30px;
+  max-width: 40%
+}
+
+form input, select{
+  padding: 5px;
+  margin: 5px;
+}
+
+table, th, td{
+  border: 1px solid #999;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 7px;
+  
+  
+}
+table{
+  margin: auto;
+  box-shadow: 7px 7px 7px #999;
+  border-radius: 10px;
+  }
+
+.transf{
+  background: rgba(255, 146, 146, 0.62);
+}
+th {
+  background-color: #555;
+  color: #FFF
+}
+h1{
+  text-align: center
+}
