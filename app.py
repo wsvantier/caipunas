@@ -15,6 +15,10 @@ app.register_blueprint(rm_bp)
 app.register_blueprint(lp_bp)
 app.register_blueprint(transporte_bp)
 
+@app.template_filter('RA')
+def format_ra(valor):
+    return f"{valor:,}".replace(',', '.')
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()

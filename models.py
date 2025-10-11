@@ -24,10 +24,11 @@ class Sed(db.Model):
     num_chamada = db.Column(db.Integer, nullable = False)
     nome = db.Column(db.String, nullable = False)
     ra = db.Column(db.Integer, nullable = False)
-    dig_ra = db.Column(db.Integer, nullable = False) 
+    dig_ra = db.Column(db.String, nullable = False) 
     dt_nasc = db.Column(db.Date, nullable = False)
     inicio = db.Column(db.Date, nullable = False)
     fim = db.Column(db.Date, nullable = False)
+    situacao = db.Column(db.String, nullable = False)
     logradouro = db.Column(db.String, nullable = False)
     num_residencia = db.Column(db.String, nullable = False)
     bairro = db.Column(db.String, nullable = False)
@@ -39,6 +40,7 @@ class Sed(db.Model):
 class Aluno(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     nome = db.Column(db.String, nullable = False)
+    ra = db.Column(db.Integer, nullable = False)
     turno = db.Column(db.Enum('MANHA','TARDE'), nullable = False)
     transporte_id = db.Column(db.Integer, db.ForeignKey('transporte.id'), nullable = True)
     

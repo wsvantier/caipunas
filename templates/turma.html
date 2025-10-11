@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block titulo %} {{ turma }}{%endblock%}
+
+{% block conteudo %}
+
+<form action="/lp/upload/{{id}}" method="post" enctype="multipart/form-data">
+    Upload de CSV: <input type="file" name="arq" id="arq"><br>
+    <select name="periodo" id="periodo" required>
+        <option value="" selected disabled> Selecione o Turno </option>
+        <option value="MANHA">Manha</option>
+        <option value="TARDE">Tarde</option>
+    </select>
+    <input type="submit" value="Upload">
+</form>
+
+<h1> Turma: {{turma}} </h1>
+
+<table>
+    <thead>
+        <th>Nº</th>
+        <th>RA</th>
+        <th>Nome</th>
+        <th>Série</th>
+        <th>Data Nascimento</th>
+        <th>Situação</th>
+    </thead>
+    <tbody>
+        {% for x in dados %}
+
+        <tr>
+            <td>{{ x.num_chamada }}</td>
+            <td>{{ x.ra | RA }}-{{x.dig_ra}}</td>
+            <td>{{ x.nome }}</td>
+            <td>{{ x.serie }}</td>
+            <td>{{ x.dt_nasc.strftime('%d/%m/%Y') }}</td>
+            <td>{{ x.situacao }}</td>
+         </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+
+{%endblock%}

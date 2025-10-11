@@ -17,7 +17,7 @@
             <li><a href="{{url_for('lp.home')}}"> Lista Piloto </a>
                 <ul class="sub">
                     {% for x in turmas %}
-                        <li><a href="#">{{ x }}</a></li>
+                        <li><a href="/lp/turma/{{x['id']}}">{{ x['desc'] }}</a></li>
                     {% endfor %}
                 </ul>
             </li>
