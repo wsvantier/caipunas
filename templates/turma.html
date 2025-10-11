@@ -3,6 +3,7 @@
 {% block titulo %} {{ turma }}{%endblock%}
 
 {% block conteudo %}
+
 <link rel="stylesheet" href="{{url_for('static', filename='css/turma.css')}}">
 <main>
     <div id="form">
@@ -15,6 +16,12 @@
             </select>
             <input type="submit" value="Upload">
         </form>
+        {% if msg %}
+        <div class="erro">
+         {{ msg }}
+        </div>
+{% endif %}
+
     </div>
 
 <section>
@@ -52,5 +59,4 @@
     </table>
 </section>
 </main>
-
 {%endblock%}
