@@ -22,7 +22,7 @@ def inject_globals():
     return {
         'turmas': turmas(),
         'transportes': rotas()
-    }
+    }   
     
     
 

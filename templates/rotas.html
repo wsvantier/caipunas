@@ -9,7 +9,6 @@
     <table>
         <thead>
             <th>Nome do Aluno</th>
-            <th>RA</th>
             <th>Endereço</th>
             <th>Turno</th>
         </thead>
@@ -17,10 +16,8 @@
             {% for x in alunos %}
             <tr>
                 <td> {{x.nome}}  </td>
-                <td> {{x.ra | RA}}-{{x.dig_ra}}</td>
                 <td> {{x.logradouro}}, {{x.num_residencia}}</td>
                 <td> {{x.turno}} </td>
-
             </tr>
 
 

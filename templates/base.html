@@ -24,9 +24,8 @@
             <li><a href="{{url_for('transporte.home')}}"> Transporte </a>
                 <ul class="sub">
                     {% for x in transportes %}
-                        <li><a href="#">{{ x }}</a></li>
+                        <li><a href="/transporte/rotas/{{x.id}}">{{ x.desc }}</a></li>
                         {% endfor %}
-                        <li><a href="/transporte/rotas/null">Sem transporte</a></li>
                 </ul>
             </li>
             <li><a href="#"> Quadro de Funcionários </a></li>

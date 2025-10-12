@@ -8,6 +8,5 @@ def turmas() -> list:
 
 def rotas() -> list:
     rotas = Transporte.query.all()
-    dados = [x.desc for x in rotas]
-
+    dados = [{'id': x.id, 'desc': x.desc} for x in rotas]
     return dados
