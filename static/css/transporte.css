@@ -67,3 +67,31 @@ td a {
   border-radius: 7px;
   margin: auto;
 }
+
+#alunos{
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 7px;
+  margin: 30px;
+  overflow: scroll;
+  min-height: 400px;
+}
+
+#alunos th {
+  background: #333;
+  color: #fff;
+}
+
+#alunos table th{
+  border: 1px solid #eee;
+}
+
+#alunos form{
+  display: flex;
+  gap: 15px;
+}
+
+#alunos button{
+  max-height: 50px;
+}

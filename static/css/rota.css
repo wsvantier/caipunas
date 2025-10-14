@@ -1,0 +1,28 @@
+main{
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+
+
+table, th, td{
+  border: 1px solid #555;
+  border-collapse: collapse;
+  margin: auto 30px;
+  padding: 7px;
+  
+}
+
+td, tr{
+  text-align: center;
+}
+
+h2{
+  margin: 30px;
+  text-align: center;
+  background: #333;
+  border-radius: 30px;
+  color: #FFF;
+  padding: 15px;
+  box-shadow: 8px 8px 8px #999
+}

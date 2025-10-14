@@ -28,32 +28,35 @@
         </table>
     </section>
 </main>
-<form action="{{url_for('transporte.update_rota')}}" method="post">
+<div id="alunos">
 
-    <table>
-        <thead>
-            <th>Nome do Aluno</th>
-            <th>Definir Rota</th>
-        </thead>
-        <tbody>
-            {% for x in alunos %}
-            <tr>
-                <td> {{ x.nome }} </td>
-                <td> <select name="rota_{{x.id}}">
-                        <option value=""> Não usa </option>
-                        {% for y in transportes %}
-                        <option value="{{y.id}}" {%if y.id == x.transporte_id %} selected {%endif%}> {{y.desc}} </option>
-                        {% endfor %}
-
-                    </select>
-                </td>
-            </tr>
-
-            {% endfor %}
-        </tbody>
-    </table><br>
-    <button type="submit"> Atualizar </button>
-</form>
+    <form action="{{url_for('transporte.update_rota')}}" method="post">
+    
+        <table>
+            <thead>
+                <th>Nome do Aluno</th>
+                <th>Definir Rota</th>
+            </thead>
+            <tbody>
+                {% for x in alunos %}
+                <tr>
+                    <td> {{ x.nome }} </td>
+                    <td> <select name="rota_{{x.id}}">
+                            <option value=""> Não usa </option>
+                            {% for y in transportes %}
+                            <option value="{{y.id}}" {%if y.id == x.transporte_id %} selected {%endif%}> {{y.desc}} </option>
+                            {% endfor %}
+    
+                        </select>
+                    </td>
+                </tr>
+    
+                {% endfor %}    
+            </tbody>
+        </table>
+        <button type="submit"> Atualizar </button>
+    </form>
+</div>
 <script src="{{url_for('static', filename='js/transporte.js')}}"></script>
 
 {% endblock %}

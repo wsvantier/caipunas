@@ -3,9 +3,10 @@
 {% block titulo %} {{rota}} {%endblock%}
 
 {% block conteudo %}
-
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/rota.css')}}">
 <main>
     <h1> Lista do Transporte - Rota: {{rota}} </h1>
+    <h2> Manha </h2>
     <table>
         <thead>
             <th>Nome do Aluno</th>
@@ -13,7 +14,26 @@
             <th>Turno</th>
         </thead>
         <tbody>
-            {% for x in alunos %}
+            {% for x in manha %}
+            <tr>
+                <td> {{x.nome}}  </td>
+                <td> {{x.logradouro}}, {{x.num_residencia}}</td>
+                <td> {{x.turno}} </td>
+            </tr>
+
+
+            {%endfor%}
+        </tbody>
+    </table>
+       <h2> Tarde </h2>
+    <table>
+        <thead>
+            <th>Nome do Aluno</th>
+            <th>Endereço</th>
+            <th>Turno</th>
+        </thead>
+        <tbody>
+            {% for x in tarde %}
             <tr>
                 <td> {{x.nome}}  </td>
                 <td> {{x.logradouro}}, {{x.num_residencia}}</td>

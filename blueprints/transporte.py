@@ -55,7 +55,7 @@ def rotas(id):
     
     rota = Transporte.query.get(id)
     
-    alunos = (
+    manha = (
     db.session.query(
         Sed.nome,
         Sed.ra,
@@ -68,12 +68,32 @@ def rotas(id):
     .join(Aluno, Sed.ra == Aluno.ra)
     .filter(
         (Sed.situacao == 'ATIVO') &
-        (Aluno.transporte_id == id)
+        (Aluno.transporte_id == id) &
+        (Aluno.turno == 'MANHA')
     ).order_by(Sed.nome)
     .all()
 )
 
-    return render_template('rotas.html', alunos=alunos, rota=rota.desc)
+    tarde = (
+        db.session.query(
+            Sed.nome,
+            Sed.ra,
+            Sed.dig_ra,
+            Sed.logradouro,
+            Sed.num_residencia,
+            Aluno.turno,
+            Aluno.transporte_id
+        )
+        .join(Aluno, Sed.ra == Aluno.ra)
+        .filter(
+            (Sed.situacao == 'ATIVO') &
+            (Aluno.transporte_id == id) &
+            (Aluno.turno == 'TARDE') 
+        ).order_by(Sed.nome)
+        .all()
+    )
+
+    return render_template('rotas.html', manha=manha, tarde=tarde, rota=rota.desc)
 
 @transporte_bp.route('/update', methods=['POST'])
 def update_rota():
